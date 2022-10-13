@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+
+<!-- contact section -->
+
+<section class="contact_section layout_padding ">
+    <div class="design-box">
+        <img src="images/design-2.png" alt="">
+    </div>
+    <div class="container ">
+        <div class="">
+            <h2 class="">
+                <a href="{{url_for('dangky')}}">Đăng Ký</a>
+                <a href="{{url_for('dangnhap')}}">Đăng Nhập</a>
+            </h2>
+
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!--form-->
+                {{ wtf.quick_form(form,novalidate=True)}}
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="map_container">
+                    <div class="map-responsive">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/61zIZxII5J0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+
+<!-- end contact section -->
+
+
+
+<!-- end info_section -->
+<!-- footer section -->
+<section class="info_section ">
+    <div class="container">
+        <div class="info_container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{{ url_for('static',filename='location.png')}}" alt="">
+                            <span>
+                                Làng Lá
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="https://goo.gl/maps/nTTX3XV1sDUvGQ7R9">
+                            <img src="{{ url_for('static',filename='location.png')}}" alt="">
+                            <span>
+                                Hà Nội
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="tel:+84332496355">
+                            <img src="{{ url_for('static',filename='phone.png')}}" alt="">
+                            <span>
+                                0332496355
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{{ url_for('static',filename='mail.png')}}" alt="">
+                            <span>top1sv4slztheenlz@gmail.com
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info_form">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        Nhận Bí Thuật Thêm :
+                    </h5>
+                </div>
+                <form action="">
+                    <div class="email_box">
+                        <label for="email2">Enter Your Email</label>
+                        <input type="text" id="email2">
+                    </div>
+                    <div>
+                        <button>
+                            subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="info_social">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        Theo Dõi Tôi Tại:
+                    </h5>
+                </div>
+                <div class="social_box">
+                    <a href="https://www.facebook.com/iamkalis2000/">
+                        <img src="{{ url_for('static',filename='fb.png')}}" alt="">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCB4Y3mPiMhiYAecjatAR4Pw">
+                        <img src="{{ url_for('static',filename='youtube.png')}}" alt="">
+                    </a>
+                    <a href="">
+                        <img src="{{ url_for('static',filename='linkedin.png')}}" alt="">
+                    </a>
+                    <a href="">
+                        <img src="{{ url_for('static',filename='insta.png')}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid footer_section">
+    <p>
+        &copy; <span id="displayYear"></span> By
+        <a href="https://html.design/">Lộc Úp Sọt @2022 </a>
+    </p>
+</section>
+<!-- footer section -->
+
+<script type="text/javascript" src="{{ url_for('static',filename='jquery-3.4.1.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='custom.js')}}"></script>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+
+<!-- contact section -->
+
+<section class="contact_section layout_padding">
+    <div class="design-box">
+        <img src="images/design-2.png" alt="">
+    </div>
+    <div class="container ">
+        <div class="">
+            <h2 class="">
+                <a href="{{url_for('dangky')}}">Đăng Ký</a>
+                <a href="{{url_for('dangnhap')}}">Đăng Nhập</a>
+            </h2>
+
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% if error %}
+                <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                    <!--form-->
+                    {{ wtf.quick_form(form,novalidate=True)}}
+
+            </div>
+            {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}
+                {% endif %}
+            <div class="col-md-6">
+                <div class="map_container">
+                    <div class="map-responsive">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/61zIZxII5J0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
